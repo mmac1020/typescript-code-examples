@@ -7,18 +7,26 @@ interface UserInterface {
   address?: string;
 }
 
-let orlando: UserInterface = {id: 1, firstName: 'orlando', lastName: 'caraballo', address: 'some address'};
+let orlando: UserInterface = {
+  id: 1,
+  firstName: 'orlando',
+  lastName: 'caraballo',
+  address: 'some address',
+};
 
-let jess: UserInterface = {id: 2, firstName: 'jess', lastName: 'bracht'};
+let natalie: UserInterface = { id: 2, firstName: 'natalie', lastName: 'lane' };
 
 function displayUser(user: UserInterface) {
   console.log(user);
 }
 
-displayUser(jess);
+displayUser(orlando);
 
-function copyAndChangeFirstName(firstName: string, user: UserInterface): UserInterface {
-  let userCopy: UserInterface = {...user};
+function copyAndChangeFirstName(
+  firstName: string,
+  user: UserInterface
+): UserInterface {
+  let userCopy: UserInterface = { ...user };
   userCopy.firstName = firstName;
   return userCopy;
 }

@@ -16,10 +16,10 @@ let sentence: string;
 class User {
   firstName: string;
   lastName: string;
-  address: string
+  address: string;
 
   // Here we are manually creating the type for "user" and accepting it as a constructor input
-  constructor(user: {firstName: string, lastName: string, address: string}) {
+  constructor(user: { firstName: string; lastName: string; address: string }) {
     this.firstName = user.firstName;
     this.lastName = user.lastName;
     this.address = user.address;
@@ -30,7 +30,11 @@ class User {
   }
 }
 
-const mac =  new User({firstName: 'michael', lastName: 'mac', address: 'some address'});
+const mac = new User({
+  firstName: 'michael',
+  lastName: 'mac',
+  address: 'some address',
+});
 
 console.log('mac', mac);
 
