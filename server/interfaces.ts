@@ -7,12 +7,19 @@ interface UserInterface {
   address?: string;
 }
 
+// const { data: UserInterface } = axios.get('/api');
+
 let orlando: UserInterface = {
   id: 1,
   firstName: 'orlando',
   lastName: 'caraballo',
-  address: 'some address',
+  // address: 'someAddress'
+  // Not on the interface
+  // someOther: 123
 };
+
+// Doesn't work, readonly
+// orlando.id = 2;
 
 let natalie: UserInterface = { id: 2, firstName: 'natalie', lastName: 'lane' };
 

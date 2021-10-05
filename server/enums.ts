@@ -8,6 +8,7 @@ enum HttpStatus {
   NO_CONTENT = 204,
   NOT_AUTHORIZED = 401,
   NOT_FOUND = 404,
+  TEST = 'TEST',
 }
 
 app.use((req: express.Request, res: express.Response, next) => {
