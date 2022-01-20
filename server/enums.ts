@@ -1,18 +1,22 @@
-import express from 'express';
+// User action types without enums. We'd have to look at these individually and figure out which one we want to use
+const GET_USERS = 'GET_USERS';
+const SET_USERS = 'SET_USERS';
+const ADD_USER = 'ADD_USER';
+const GET_SINGLE_USER = 'GET_SINGLE_USER';
 
-const app = express();
-
-// Enums are named constants that we NEVER want to change
-enum HttpStatus {
-  SUCCESS = 200,
-  NO_CONTENT = 204,
-  NOT_AUTHORIZED = 401,
-  NOT_FOUND = 404
+// The Enum way
+enum UsersActions {
+  GET = 'GET_USERS',
+  SET = 'SET_USERS',
 }
 
-app.use((req: express.Request, res: express.Response, next) => {
-  // On a successful query we can respond with the right status
-  res.sendStatus(HttpStatus.SUCCESS);
-  // On a not found we can throw a not found
-  // res.sendStatus(HttpStatus.NOT_FOUND);
-})
+enum UserActions {
+  ADD = 'ADD_USER',
+  GET = 'GET_SINGLE_USER',
+}
+
+// And we can use these across our apps as
+
+UsersActions.GET;
+
+UserActions.ADD;
